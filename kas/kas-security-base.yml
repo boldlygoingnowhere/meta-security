@@ -40,7 +40,6 @@ local_conf_header:
     INHERIT += "buildstats buildstats-summary buildhistory"
     INHERIT += "report-error"
     INHERIT += "testimage"
-    INHERIT += "rm_work"
     BB_NUMBER_THREADS="24"
     BB_NUMBER_PARSE_THREADS="12"
     BB_TASK_NICE_LEVEL = '5'
@@ -51,7 +50,7 @@ local_conf_header:
     EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
     PACKAGE_CLASSES = "package_ipk"
 
-    DISTRO_FEATURES:append = " security pam apparmor smack ima tpm tpm2"
+    DISTRO_FEATURES:append = " security pam apparmor smack ima tpm tpm2 integrity"
     MACHINE_FEATURES:append = " tpm tpm2"
 
   diskmon: |
