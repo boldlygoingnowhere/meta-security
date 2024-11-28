@@ -52,7 +52,8 @@ process_verity() {
 
 verity_setup() {
     local TYPE=$1
-    local INPUT=${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.$TYPE
+    local INPUT=${IMAGE_NAME}.$TYPE
+
     local SIZE=$(stat --printf="%s" $INPUT)
     local OUTPUT=$INPUT.verity
 
